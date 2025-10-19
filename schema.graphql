@@ -1,0 +1,35 @@
+type MonPad_AccountDeployed {
+  id: ID!
+  user: String!
+  smartAccount: String!
+  timestamp: BigInt!
+}
+
+type MonPad_TokenDeployed {
+  id: ID!
+  deployer: String!
+  tokenAddress: String!
+  name: String!
+  symbol: String!
+  supply: BigInt!
+  timestamp: BigInt!
+}
+
+type MonPad_TokenMinted {
+  id: ID!
+  caller: String!
+  tokenAddress: String!
+  to: String!
+  amount: BigInt!
+  timestamp: BigInt!
+}
+
+type MonPad_TokenTransferred {
+  id: ID!
+  caller: String!
+  tokenAddress: String!
+  to: String!
+  amount: BigInt!
+  timestamp: BigInt!
+}
+

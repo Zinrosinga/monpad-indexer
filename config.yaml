@@ -1,0 +1,17 @@
+# yaml-language-server: $schema=./node_modules/envio/evm.schema.json
+name: monpad-indexer
+networks:
+- id: 10143
+  start_block: 0
+  contracts:
+  - name: MonPad
+    address:
+    - 0xBae9F76833AAAAfb2833AD258b75909601A35C80
+    handler: src/EventHandlers.ts
+    events:
+    - event: AccountDeployed(address indexed user, address smartAccount, uint256 timestamp)
+    - event: TokenDeployed(address indexed deployer, address indexed tokenAddress, string name, string symbol, uint256 supply, uint256 timestamp)
+    - event: TokenMinted(address indexed caller, address indexed tokenAddress, address indexed to, uint256 amount, uint256 timestamp)
+    - event: TokenTransferred(address indexed caller, address indexed tokenAddress, address indexed to, uint256 amount, uint256 timestamp)
+unordered_multichain_mode: true
+preload_handlers: true
